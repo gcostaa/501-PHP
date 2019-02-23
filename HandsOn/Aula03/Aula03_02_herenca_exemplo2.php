@@ -58,10 +58,10 @@ $contacorrente->sacar(800);
 
 echo'<hr>';
 
-echo 'Saldo em Conta: '.$conta->verSaldo();
+echo'Saldo em Conta: '.$conta->verSaldo();
 
 echo'<hr>';
 
-echo 'Saldo em Conta Corrente: '.$contacorrente->verSaldo();
+echo'Saldo em Conta Corrente: '.$contacorrente->verSaldo();
 
 ?>
