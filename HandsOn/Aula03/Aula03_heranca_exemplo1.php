@@ -1,37 +1,37 @@
 <?php
 
-class Conta
-{
+    class Conta
+    {
 
-    public $saldo=0;
-    public $titular;
+        public $saldo=0;
+        public $titular;
 
-    /**
-     * Metodo para fazer um saque
-     * @param float $valor->ex de PHP DOC
-     */
+        /**
+         * Metodo para fazer um saque
+         * @param float $valor->ex de PHP DOC
+         */
 
-     public function sacar($valor)
-     {
-         echo"<hr>Saque Efetuado Valor:<b> $valor</b><hr>";
-         $this->saldo-=$valor;
-     }
+        public function sacar($valor)
+        {
+            echo"<hr>Saque Efetuado Valor:<b> $valor</b><hr>";
+            $this->saldo-=$valor;
+        }
 
-     /**
-     * Metodo para fazer um deposito
-     * @param float $valor
-     */
+        /**
+         * Metodo para fazer um deposito
+         * @param float $valor
+         */
 
-     public function depositar($valor)
-     {
-        echo"<hr>Deposito Efetuado Valor:<b> $valor</b><hr>";
-        $this->saldo+=$valor;
-     }
+        public function depositar($valor)
+        {
+            echo"<hr>Deposito Efetuado Valor:<b> $valor</b><hr>";
+            $this->saldo+=$valor;
+        }
 
-     public function verSaldo():float
-     {
-         return $this->saldo;
-     }
+        public function verSaldo():float
+        {
+            return $this->saldo;
+        }
 
     }
 
@@ -47,10 +47,8 @@ class Conta
     }
 
     class ContaPoupancaConjunta extends ContaPoupanca
-    {
-
-    }
-
+    {}
+    
     $conta=new Conta();
     $conta->deposita(1200);
 
