@@ -32,6 +32,9 @@
         $contaCorrente = new ContaCorrente();
         //$conta = new Conta();
 
+        $contaPoupanca->depositar(500);
+        $contaPoupanca->sacar(100);
+
         echo'<pre>';
         var_dump($contaCorrente);
         echo'<hr>';
