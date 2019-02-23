@@ -45,6 +45,7 @@ final class ContaCorrente extends Conta
     }
 }
 
+//class ContaConjunta extends ContaCorrente
 class ContaConjunta extends Conta
 {
     public function gerarLog($dados)
