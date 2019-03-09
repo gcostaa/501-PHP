@@ -81,6 +81,9 @@ $contaSemInterface = new contaSemInterface();
 $aplicacao = new Aplicacao();
 $aplicacao->aplicar($contaPouoanca);
 
+//$aplicacao->aplicar($contaSemInterface);
+
+
 echo '<hr>';
 
 echo 'É uma instância de contasSemInterface: <br>';
