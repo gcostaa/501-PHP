@@ -17,10 +17,10 @@ abstract class ContasAbstract implements ContasInterface
     public $saldo=0;
     public $titular;
 
-    public function sacar(float $valor):floatval
+    public function sacar(float $valor):float
     {
         if($valor<=$this->saldo){
-            
+
         }
     }
 
