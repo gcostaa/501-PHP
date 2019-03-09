@@ -11,6 +11,7 @@ abstract class FreteAbstract implements FreteInterface
     public $valor;
     public $prazo;
 
+    //Stub->metodo fake para continuar o programa e dps se preocupar cm ele
     public function buscar($dados)
     {
         echo'<hr>Consultando a API dos correios...<hr>';
