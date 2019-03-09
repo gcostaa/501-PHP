@@ -26,7 +26,7 @@ abstract class FreteAbstract implements FreteInterface
 
     public function getPrazo()
     {
-        return $this->prazo;oi
+        return $this->prazo;
     }
 
 }
