@@ -21,9 +21,38 @@ abstract class ContasAbstract implements ContasInterface
     {
         if($valor<=$this->saldo){
 
+            $this->saldo -=$valor;
+
+        }else{
+            echo "Saldo insuficiente...<hr>";
         }
+        return $this->saldo;
+    }
+
+    public function depositar (floar $valor):floatval
+    {
+        $this->saldo +=$valor;
+        return $this->saldo;
+    }
+
+    public function verSaldo():float{
+
+        return $this->saldo;
     }
 
 }
 
+final class ContaCorrente extends ContasAbstract{
+        
+}
+
+final class ContaPoupanca extends ContasAbstract{
+        
+}
+
+$conta = new ContaCorrente();
+
+echo "Saldo atual: {$conta->depositar(1000)}<hr>";
+echo "Saldo atual: {$conta->sacar(250)}<hr>";
+echo "Saldo atual: {$conta->sacar(2000)}<hr>";
 ?>
