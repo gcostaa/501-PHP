@@ -8,6 +8,8 @@ abstract class Contas
 
     public static $atributoPrivate;
 
+    //public static $atributoPrivate;
+
     public function depositar($valor)
     {
         $this->saldo+=$valor;
@@ -58,7 +60,7 @@ class ContaPoupanca extends Contas
         $this->depositar($valor);
 
         //fazendo uma referencia ao atributo privado da classe pai
-        echo 'Atributo private  da classe mãe'. parent::$atributoPrivate.'<br>';
+        //echo 'Atributo private  da classe mãe'. parent::$atributoPrivate.'<br>';
     }
 
     public function resgatar($valor)
