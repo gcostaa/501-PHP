@@ -46,6 +46,10 @@ abstract class ContasAbstract implements ContasInterface, LoginInterface
         return $this->saldo;
     }
 
+    public function gerarLog(){
+
+    }
+
 }
 
 final class ContaCorrente extends ContasAbstract{
