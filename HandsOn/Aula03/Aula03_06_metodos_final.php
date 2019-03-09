@@ -15,7 +15,7 @@
         }*/
     }
 
-    $log = new LOgAlterado();a
+    $log = new LOgAlterado();
     $log->escrever('teste');
 
 ?>
