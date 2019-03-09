@@ -3,7 +3,7 @@
 interface ContasInterface
 {
 
-    //com type hinting
+    //com type hinting-> determinar o tipo da variavel como por exemplo float dolar_valor
     public function sacar(float $valor):float;
 
     public function depositar(float $valor):float;
@@ -21,7 +21,7 @@ abstract class ContasAbstract implements ContasInterface
     {
         if($valor<=$this->saldo){
 
-            $this->saldo -=$valor;
+            $this->saldo-=$valor;
 
         }else{
             echo "Saldo insuficiente...<hr>";
@@ -29,9 +29,10 @@ abstract class ContasAbstract implements ContasInterface
         return $this->saldo;
     }
 
-    public function depositar (floar $valor):floatval
+    public function depositar(float $valor):float
     {
-        $this->saldo +=$valor;
+        $this->saldo+=$valor;
+
         return $this->saldo;
     }
 
@@ -55,4 +56,5 @@ $conta = new ContaCorrente();
 echo "Saldo atual: {$conta->depositar(1000)}<hr>";
 echo "Saldo atual: {$conta->sacar(250)}<hr>";
 echo "Saldo atual: {$conta->sacar(2000)}<hr>";
+
 ?>
