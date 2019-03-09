@@ -43,4 +43,9 @@ class Titular
     }
 }
 
+class Conta
+{
+    
+}
+
 ?>
