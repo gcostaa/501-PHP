@@ -4,18 +4,18 @@
     {
         public function validarCpfCnpj($cpf0rCnpj)
         {
-            echo '<hr>Validando cpf/cnpj';
+            echo '<hr color="#000000">Validando cpf/cnpj';
         }
 
         public function validarCartao($numeroCartao)
         {
-            echo '<hr>Validando cartao...';
+            echo '<hr color="#000000">Validando cartao...';
             
         }
 
         public function validarDados($dados)
         {
-            echo '<hr>Validando os dados...Metodo Trait Validacao';
+            echo '<hr color="#000000">Validando os dados...Metodo Trait Validacao';
             
         }
         public abstract function metodoAbstrato($parametro);
@@ -27,17 +27,17 @@
 
         public function gravar($dados)
         {
-            echo '<hr>Gravando dados no banco<hr>';
+            echo '<hr color="#000000">Gravando dados no banco<hr>';
         }
         
         public function consultar($id)
         {
-            echo '<hr>BUscando registro<hr>';
+            echo '<hr color="#000000">BUscando registro<hr>';
         }
 
         public function validarDados($dados)
         {
-            echo '<hr>Validando os dados...Metodo Trait Banco';
+            echo '<hr color="#000000">Validando os dados...Metodo Trait Banco';
             
         }
     }
@@ -51,7 +51,7 @@
 
         public function metodoAbstrato($parametro)
         {
-            echo '<hr>Metodo Implementado';
+            echo '<hr color="#000000">Metodo Implementado';
         }
     }
 
@@ -78,9 +78,9 @@
 
     $vendas->finalizar('dados');
 
-    echo '<hr>';
-    echo "nome do banco {$vendas->getNomeBanco()}";
+    echo '<hr width="300" align="left" color="#000000">';
+    echo '<pre>';
+    echo "Nome do banco:<br>{$vendas->getNomeBanco()}";
     var_dump($vendas);
 
-echo '<br>';
 ?>
