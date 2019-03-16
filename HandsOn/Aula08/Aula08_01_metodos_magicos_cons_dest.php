@@ -54,9 +54,10 @@
     $conta = new Contas($titular);
 
     //destroi o obj e chama o destruct
-    unset($titular);
+    //unset($titular);
 
-    
+    unset($conta);
+
     /*$titular = new Titular();
     $titular->nome='Paula';
     $titular->cpf='123456999';
