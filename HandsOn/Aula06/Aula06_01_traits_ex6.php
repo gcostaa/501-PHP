@@ -81,4 +81,6 @@
     echo '<hr>';
     echo "nome do banco {$vendas->getNomeBanco()}";
     var_dump($vendas);
+
+echo '<br>';
 ?>
