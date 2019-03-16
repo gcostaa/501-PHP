@@ -49,18 +49,20 @@
 
     $titular = new Titular();
     $titular->nome='Paula';
-    $titular->cpf='123456';
+    $titular->cpf='1234568888';
 
     $conta = new Contas($titular);
 
+    //destroi o obj e chama o destruct
     unset($titular);
 
-    $titular = new Titular();
+    
+    /*$titular = new Titular();
     $titular->nome='Paula';
-    $titular->cpf='123456';
-
+    $titular->cpf='123456999';
+    $conta = new Contas($titular);
     echo 'Titular: '.$conta->getTitular()->nome;
-    echo '<br>CPF Titular: '.$conta->getTitular()->cpf;
+    echo '<br>CPF Titular: '.$conta->getTitular()->cpf;*/
 
 
 ?>
