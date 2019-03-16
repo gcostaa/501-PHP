@@ -39,19 +39,18 @@
         }
     }
 
+    trait TodasAsTraits
+    {
+        use Validacao, Banco
+        {
+            Banco::validarDados insteadOf Validacao;
+        }
+    }
+
     class Vendas
     {
-        use Validacao, Banco{
-
-        //eu digo que quero usar o metodo da trait banco ao inves da validacao
-        Banco::validarDados insteadof Validacao;
-
-        /*ouuuu,*/
-        Banco::validarDados as BValidacao;
-        Validacao::validarDados as VValidacao;
-       
-
-        }
+        
+        use TodasAsTraits;
 
         public function finalizar($dados)
         {

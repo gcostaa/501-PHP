@@ -18,10 +18,13 @@
             echo '<hr>Validando os dados...Metodo Trait Validacao';
             
         }
+        public abstract function metodoAbstrato($parametro);
     }   
 
     trait Banco
-    {           
+    {       
+        public $nomeBanco='contas';
+
         public function gravar($dados)
         {
             echo '<hr>Gravando dados no banco<hr>';
@@ -39,19 +42,23 @@
         }
     }
 
+    trait TodasAsTraits
+    {
+        use Validacao, Banco
+        {
+            Banco::validarDados insteadOf Validacao;
+        }
+
+        public function metodoAbstrato($parametro)
+        {
+            echo '<hr>Metodo Implementado';
+        }
+    }
+
     class Vendas
     {
-        use Validacao, Banco{
-
-        //eu digo que quero usar o metodo da trait banco ao inves da validacao
-        Banco::validarDados insteadof Validacao;
-
-        /*ouuuu,*/
-        Banco::validarDados as BValidacao;
-        Validacao::validarDados as VValidacao;
-       
-
-        }
+        
+        use TodasAsTraits;
 
         public function finalizar($dados)
         {
@@ -59,10 +66,19 @@
             $this->validarCpfCnpj(1111111111);
             $this->validarDados('dados');
             $this->gravar($dados);
+            $this->metodoAbstrato('teste');
+        }
+
+        public function getNomeBanco(){
+            return $this->nomeBanco;
         }
     }
 
     $vendas = new Vendas();
 
     $vendas->finalizar('dados');
+
+    echo '<hr>';
+    echo "nome do banco {$vendas->getNomeBanco()}";
+    var_dump($vendas);
 ?>
