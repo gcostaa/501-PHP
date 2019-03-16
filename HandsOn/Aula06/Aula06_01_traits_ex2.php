@@ -3,7 +3,8 @@
     trait Operacoes
     {
         public function depositar($valor)
-        {
+        {   
+            echo '<hr>Metodo da Trait Operacoes<hr>';
             $this->saldo+=$valor;
         }
         public function sacar($valor)
@@ -19,20 +20,38 @@
 
     abstract class Contas
     {
-        use Operacoes;
+        //use Operacoes;
 
         protected $saldo;
+
+        public function depositar($valor)
+        {   
+            echo '<hr>Metodo da classe contas<hr>';
+           
+        }
 
     }
 
     class ContaPoupanca extends Contas
     {
-        
+        use Operacoes;
+
+        public function depositar($valor)
+        {   
+            echo '<hr>Metodo da Classe Poupanca<hr>';
+            $this->saldo+=$valor;
+        }
     }
 
     class ContaCorrente extends Contas
     {
+        //use Operacoes;
 
+        /*public function depositar($valor)
+        {   
+            echo '<hr>Metodo da Classe Corrente<hr>';
+            $this->saldo+=$valor;
+        }*/
     }
 
     $objPoupanca = new ContaPoupanca();
