@@ -2,6 +2,10 @@
 
 class Usuarios
 {
+
+    /*Isso significa (como alguém que conhece de OO deve saber) que aquele método/atributo pertence à 
+    classe e não à uma instância dela e, por isso, pode ser acessado sem instânciar um novo objeto.*/
+    
     public $nome;
     public $email;
 
