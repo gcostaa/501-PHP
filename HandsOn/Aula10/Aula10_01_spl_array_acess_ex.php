@@ -1,0 +1,60 @@
+<?php
+
+    class Usuario implements ArrayAccess
+    //class Usuario
+
+    {
+        public $id;
+        public $nome;
+        public $email;
+        public $senha;
+
+        public function offsetExists($offset)
+        {
+            return isset($this->$offset);
+        }
+
+        public function offsetGet($offset)
+        {
+            if(property_exists($this,$offset))
+            {
+                return $this->offset;
+            }
+        }
+
+        public function offsetSet($offset,$value)
+        {
+            if(property_exists($this,$offset))
+            {
+                return $this->offset = $value;
+            }
+        }
+
+        public function offsetUnset($offset)
+        {
+            unset($this->$offset);
+        }
+
+    }
+
+    $usuario = new Usuario();
+
+    $usuario->id = 10;
+    $usuario['id'] = 20;
+    $usuario['nome'] = 'Lucia';
+    $usuario['email'] = 'lucia@lucia.com';
+    $usario['senha'] = '1259';
+
+    echo '<pre>';
+    print_r($usario);
+
+    echo '<hr>';
+
+    foreach ($usario as $atributo => $valor)
+    {
+        echo "Atributo";
+        echo "Valor: $valor";
+        echo '<hr>';
+    }
+
+?>
