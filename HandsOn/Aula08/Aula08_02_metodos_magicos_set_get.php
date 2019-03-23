@@ -4,6 +4,7 @@
     {
         protected $nome;
         protected $email;
+        //protected $senha;
 
         public function __set($atributo,$valor)
         {   
@@ -37,7 +38,6 @@
 
     echo"----------------------------------------------<br>";
 
-    echo "O nome é: {$usuario->nome}";
-    
+    echo "O nome é: {$usuario->nome}";    
 
 ?>
