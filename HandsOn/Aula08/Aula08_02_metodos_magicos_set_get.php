@@ -12,8 +12,10 @@
             if(property_exists($this,$atributo))
             {
                 $this->$atributo=$valor;
+                echo "fazendo o set<br>";
             }else{
-                echo "<hr>ERRO a prop $atributo nã existe<hr>";
+                echo "<hr>ERRO a prop $atributo não existe<hr>";
+                //exit;
             }
         }
 
@@ -22,6 +24,7 @@
             if(property_exists($this,$atributo))
             {
                 return $this->$atributo;
+                echo "fazendo o get<br>";
             }
         }
 
@@ -30,6 +33,11 @@
     $usuario = new Usuario();
     $usuario->nome='Leticia';
     $usuario->email='lele@123.com';
+    $usuario->senha='123';
+
+    echo"----------------------------------------------<br>";
+
+    echo "O nome é: {$usuario->nome}";
     
 
 ?>
