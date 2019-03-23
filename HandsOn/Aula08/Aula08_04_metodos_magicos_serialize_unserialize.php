@@ -56,6 +56,16 @@ class Usuarios
         echo'<hr>';
     }
 
+    public function __sleep()
+    {
+        return array('nome','email');
+    }
+
+    public function __wakeup()
+    {
+        echo 'O OBJOTA (kkk) foi reconstruido';
+    }
+
 }
 
 $usuario = new Usuarios();
@@ -63,11 +73,12 @@ $usuario = new Usuarios();
 $usuario->setNome('Gustavo');
 $usuario->setEmail('garruda@mp.com.br');
 
-echo "Nome:" .$usuario->getNome()."<br>";
-echo "Email: ".$usuario->getEmail()."<br>";
-
 echo'<hr><pre>';
 
-var_dump($usuario);
+$serial=serialize($usuario);
+echo $serial;
+echo '<hr>';
+
+var_dump(unserialize($serial));
 
 ?>
