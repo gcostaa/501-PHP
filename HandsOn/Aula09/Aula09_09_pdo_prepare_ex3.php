@@ -36,6 +36,10 @@ $pdoSt->execute([
 
 $registro = $pdoSt->fetchAll(PDO::FETCH_ASSOC);
 
+if(isset($registro))
+{
+    echo 'vazio';
+}
 print_r($registro);
 
 ?>
