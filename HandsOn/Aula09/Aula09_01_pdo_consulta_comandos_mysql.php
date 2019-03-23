@@ -30,6 +30,9 @@ foreach ($registros as $usuario) {
     echo '<br>Senha: ' . $usuario->senha;
     echo '<hr>';
 }
+
+echo '<pre>';
+
 print_r($registros);
 
 ?>
