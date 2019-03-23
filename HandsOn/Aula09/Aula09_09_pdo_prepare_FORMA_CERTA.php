@@ -19,6 +19,7 @@ $senha = '41fR3d0@D4nT45';
 
 $retorno = $conexao->prepare($insert);
 
+//Representa o tipo de dados SQL CHAR, VARCHAR ou outro tipo de dados de cadeia.
 $retorno->bindParam(':nome',$nome,PDO::PARAM_STR,60);
 $retorno->bindParam(':email',$nome,PDO::PARAM_STR,100);
 $retorno->bindParam(':senha',$nome,PDO::PARAM_STR,100);
