@@ -15,7 +15,7 @@ $conexao = new PDO($dsn,$user,$pass);
 $conexao->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
 $insert = "INSERT INTO usuarios (nome,email,senha)
-VALUES ('Paula','leal04.com','123')";
+VALUES ('gustavo','leal04.com','123')";
 
 //$update = "UPDATE usuarios set senha = '5454'";
 

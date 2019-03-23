@@ -10,7 +10,7 @@ $conexao = new PDO($dsn, $user, $pass);
 
 $conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-$query = 'SELECT * FROM usuarios';
+$query = 'SELECT * FROM usuarios WHERE id=2';
 
 $retorno = $conexao->query($query);
 
