@@ -1,53 +1,76 @@
 <?php
 
-// driver de conexao
-// host é o end do servidor
-// dbname é o banco
-
 $dsn = 'pgsql:host=localhost;dbname=aula_pdo';
 $user = 'pdo';
 $pass = '123456';
 
-$conexao = new PDO($dsn,$user,$pass);
+$conexao = new PDO($dsn, $user, $pass);
 
-//definindo o modo de erro da classe pdo
+// Definindo o modo de erro da classe PDO;
 
-$conexao->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+$conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-$query = 'SELECT * FROM usuarios LIMIT 2';
+$query = 'SELECT * FROM usuarios';
 
-$retorno = $conexao->query($query);
-
-// class Usuarios{
-    
-//     public $id;
-//     public $nome;
-//     public $email;
-//     public $senha;
-// }
-
-//$registro = $retorno->fetchAll(PDO::FETCH_CLASS,'Usuarios');
+class Usuario
+{
+	public $id;
+	public $nome;
+	public $email;
+	public $senha;
+}
 
 // FETCH_CLASS->retorna um array com uma lista de usuarios, porem cada
 // usuario sera um objeto, ou seja, retorna uma lista que cada indice do
 // array seja um objeto
 
-// FETCH_ASSOC->indices do array são o msm que as colunas do banco,
-// ou seja array associativo
+// Método fetch com PDO::FETCH_CLASS-------------------melhor para muitos dados
+$retorno = $conexao->query($query);
 
-$registro = $retorno->fetchAll(PDO::FETCH_ASSOC);
+$retorno->setFetchMode(PDO::FETCH_CLASS, 'Usuario');
 
-foreach ($registro as $registro) {
-    
-    echo 'Id: '. $registro['id'];
-    echo '<br>Nome: '. $registro['nome'];
-    echo '<br>Email: '. $registro['email'];
-    echo '<br>Senha: '. $registro['senha'];
+while ($usuario = $retorno->fetch(PDO::FETCH_CLASS)) {
+    echo 'Id: ' . $usuario->id;
+    echo '<br>Nome: ' . $usuario->nome;
+    echo '<br>Email: ' . $usuario->email;
+    echo '<br>Senha: ' . $usuario->senha;
     echo '<hr>';
 }
+//-----------------------------------------------------
+
+// Método fetchAll com PDO::FETCH_CLASS-------------------tras tudo de uma vez num array
+$retorno = $conexao->query($query);
+
+$registros = $retorno->fetchAll(PDO::FETCH_CLASS, 'Usuario');
+
+foreach ($registros as $usuario) {
+    echo 'Id: ' . $usuario->id;
+    echo '<br>Nome: ' . $usuario->nome;
+    echo '<br>Email: ' . $usuario->email;
+    echo '<br>Senha: ' . $usuario->senha;
+    echo '<hr>';
+}
+//-----------------------------------------------------
+
+// Método fetchAll com PDO::FETCH_ASSOC-------------------
+$retorno = $conexao->query($query);
+
+$registros = $retorno->fetchAll(PDO::FETCH_ASSOC);
 
 echo '<pre>';
+var_dump($registros);
 
-print_r($registro);
+echo '<hr>';
+
+foreach ($registros as $registro){
+    echo 'Id: ' . $registro['id'];
+    echo '<br>Nome: ' . $registro['nome'];
+    echo '<br>Email: ' . $registro['email'];
+    echo '<br>Senha: ' . $registro['senha'];
+    echo '<hr>';
+}
+//-----------------------------------------------------
+
+print_r($registros);
 
 ?>
