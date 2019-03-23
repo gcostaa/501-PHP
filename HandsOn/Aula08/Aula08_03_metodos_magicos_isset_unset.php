@@ -56,7 +56,10 @@
 
     //UNSET DESTRUI
     unset($usuario->email);
+
+    echo'<pre>';
     //ISSET DESTRUI
     var_dump(isset($usuario->email));
-
+    
+    var_dump($usuario);
 ?>
