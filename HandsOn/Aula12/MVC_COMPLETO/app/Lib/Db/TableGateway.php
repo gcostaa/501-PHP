@@ -74,7 +74,7 @@ class TableGateway
 
     public function excluir($where)
     {
-        $delete = "DELETE FROM $this->tabela WHERE $where";
+        $delete = "DELETE FROM {$this->tabela} WHERE $where";
 
         return $this->conn->query($delete);
     }
