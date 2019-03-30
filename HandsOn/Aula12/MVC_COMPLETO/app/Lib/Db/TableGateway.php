@@ -50,6 +50,16 @@ class TableGateway
         return $this->conn->query($update);
     }
 
+    public function buscarRegistro($where, $campos = '*'){
+
+            $select = "SELECT $campos FROM {$this->tabela} WHERE $where";
+
+            $pdoSt = $this->conn->query($select);
+
+            return $pdoSt->fetch(\PDO::FETCH_ASSOC);
+
+    }
+
     public function listar($campos = '*', $where = null, $ordem = null)
     {
         //Logica para listar todos os registros
