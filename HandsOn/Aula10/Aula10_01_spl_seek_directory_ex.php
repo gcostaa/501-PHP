@@ -9,12 +9,12 @@ $diretorio = new DirectoryIterator('/var/www/html/501/HandsOn/Aula10');
 foreach ($diretorio as $value) {
     
     echo $value->getFilename();
-    echo '<br>'. $value->getSize();
+    echo '<br>'. $value->getSize(). " bytes";
     echo '<br>'. $value->getExtension();
     echo '<hr>';
 }
 
-echo '<hr width="100%" color="#000000" style="height:4px">';
+echo '<hr width="100%" color="red" style="height:4px">';
 
 //Glob Iterator, ela permite fazer uso de um filtro
 
