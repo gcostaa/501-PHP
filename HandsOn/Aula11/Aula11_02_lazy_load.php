@@ -43,11 +43,10 @@ $conexao2 = $banco->getConn();
 
 echo '<pre>';
 echo '<hr>';
-var_dump($conexao);
-echo '<hr>';
-var_dump($conexao2);
+var_dump($conexao,$conexao2);
 
-$clientes = new Clientes();
+//$clientes = new Clientes();->bancos diferentes
+$clientes = new Clientes($banco);
 
 echo '<hr>';
 
