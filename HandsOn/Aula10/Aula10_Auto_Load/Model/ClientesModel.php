@@ -3,7 +3,7 @@
     namespace Model;
 
     use Lib\Banco;
-    use Entites\ClientesEntity;
+    use Entities\ClientesEntity;
 
     class ClientesModel
     {

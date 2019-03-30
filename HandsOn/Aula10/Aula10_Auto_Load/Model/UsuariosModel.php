@@ -3,14 +3,14 @@
     namespace Model;
 
     use Lib\Banco;
-    use Entites\usuariosEntity;
+    use Entities\UsuariosEntity;
 
     class UsuariosModel
     {
         private $banco;
         private $usuario;
 
-        public function __construct(Banco $banco, usuariosEntity $usuario)
+        public function __construct(Banco $banco, UsuariosEntity $usuario)
         {
             echo '<hr>Classe Usuarisos Model<hr>';
 
