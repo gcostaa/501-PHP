@@ -4,7 +4,7 @@ namespace Fabricas;
 
 class Fabrica
 {
-    public static function criar($classe)
+    public static function criar(string $classe)
     {
         if (!class_exists($classe))
         {
