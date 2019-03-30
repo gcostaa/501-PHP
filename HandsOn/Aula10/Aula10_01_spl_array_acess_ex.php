@@ -18,7 +18,7 @@
         {
             if(property_exists($this,$offset))
             {
-                return $this->offset;
+                return $this->$offset;
             }
         }
 
@@ -26,7 +26,7 @@
         {
             if(property_exists($this,$offset))
             {
-                return $this->offset = $value;
+                return $this->$offset = $value;
             }
         }
 
@@ -43,16 +43,16 @@
     $usuario['id'] = 20;
     $usuario['nome'] = 'Lucia';
     $usuario['email'] = 'lucia@lucia.com';
-    $usario['senha'] = '1259';
+    $usuario['senha'] = '1259';
 
     echo '<pre>';
-    print_r($usario);
+    print_r($usuario);
 
     echo '<hr>';
 
-    foreach ($usario as $atributo => $valor)
+    foreach ($usuario as $atributo => $valor)
     {
-        echo "Atributo";
+        echo "Atributo<br>";
         echo "Valor: $valor";
         echo '<hr>';
     }
