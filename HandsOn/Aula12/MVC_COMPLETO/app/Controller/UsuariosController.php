@@ -54,7 +54,24 @@ class UsuariosController
 
     public function alterar($id)
     {
-        
+        if($_POST)
+        {
+            $this->entidadeUsuario->setNome($_POST['nome']);
+            $this->entidadeUsuario->setEmail($_POST['email']);
+            
+            if($_POST['senha']!='123456'){
+                $this->entidadeUsuario->setSenha($_POST['senha']);
+            }
+
+            $this->entidadeUsuario->setId($id);
+
+            if ($this->mapper->salvar($this->entidadeUsuario))
+            {
+                header('location:?rota=usuarios');
+            }
+        }
+
+        return $this->mapper->bucarPorId($id);
     }
 }
 
