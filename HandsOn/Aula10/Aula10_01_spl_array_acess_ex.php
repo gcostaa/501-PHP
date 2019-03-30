@@ -39,7 +39,7 @@
 
     $usuario = new Usuario();
 
-    $usuario->id = 10;
+    //$usuario->id = 10;
     $usuario['id'] = 20;
     $usuario['nome'] = 'Lucia';
     $usuario['email'] = 'lucia@lucia.com';
